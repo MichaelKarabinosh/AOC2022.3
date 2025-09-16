@@ -15,17 +15,16 @@ with open("InputFile", "r") as file:
 
     print("Part One:", num)
     num = 0
-    counter = 0
-    res = []
-    n = 3
+    res = [] # split array
+    n = 3 # how often to split
 
     for i in range(0,len(lines),n):
        res.append(lines[i:i + n])
 
     for entry in res:
-        firstComp = res[0]
-        secondComp = res[1]
-        thirdComp = res[3]
+        firstComp = entry[0]
+        secondComp = entry[1]
+        thirdComp = entry[2]
         for string in firstComp:
             if string in secondComp:
                 if string in thirdComp:
@@ -35,9 +34,7 @@ with open("InputFile", "r") as file:
                         else:
                             num += ord(string) - 96
                         break
-    print(num)
-    print(res)
-    hi = "jkff"
+    print("Part Two:", num)
 
 
 
